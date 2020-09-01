@@ -1,0 +1,66 @@
+.c-nav{
+
+    &__brand-name {
+        font-family: 'News Gothic BT',sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+    }
+    &__list-item {
+        font-family: 'Poppins', sans-serif;
+        font-weight: normal;
+        color:$black;
+        font-size: 1.1rem;
+    }
+    &__cart {
+        margin-left: 130px;
+        position: relative;
+        cursor: pointer;
+    }
+    &__cart-desktop{
+        cursor: pointer;
+        position: relative;
+        @include medium-up {
+            padding: 0 20px;
+        }
+
+    }
+    &__span, &__span-desktop {
+        position: absolute;
+        background: $secondary;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: normal;
+        color:$white;
+        font-size: 12px;
+    }
+    &__span {
+        top:5px;
+        left:12px;
+    }
+    &__span-desktop{
+        top:2px;
+        left:7px;
+        @include medium-up {
+        top:5px;
+        left:30px;
+        }
+    }
+    &__button {
+        margin-top: 15px;
+        width: 132px;
+        height: 30px;
+        border-radius: 50px;
+        background: $primary;
+        color:$white;
+        box-shadow: 2px 2px 15px rgba(0,0,0,.3);
+        @include medium-up {
+        margin-top: 0;
+        }
+    }
+
+}
