@@ -3,17 +3,29 @@
     position: relative;
 
 
-    &__content {
+    &__content,&__content2,&__content3 {
         z-index: 2;
         position: absolute;
+
+    }
+    &__content{
         top:5%;
         left:5%;
         @include large-up{
-        top:35%;
+        top:40%;
         left:5%;
 
         }
     }
+    &__content2{
+        left:5%;
+        top:25%;
+    }
+    &__content3{
+        left:5%;
+        top:25%;
+    }
+
     &__heading{
         font-family: 'News Gothic BT',sans-serif;
         font-weight: bold;
@@ -28,16 +40,24 @@
         width: 70%;
         font-size: 14px;
         color:$gray-text;
+        @include medium-up {
+            font-size: 16px;
+        }
     }
-    &__button{
+    &__button,&__button3{
         background: transparent;
-        border:1px solid $white;
-        color:$white;
         border-radius: 15px;
         padding: 0px 15px;
         transition: .6s;
         &:hover{
             transform: translateY(-1px);
         }
+    }
+    &__button{
+        border:1px solid $white;
+        color:$white;
+    }
+    &__button3{
+        border:1px solid $black;
     }
 }

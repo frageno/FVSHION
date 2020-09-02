@@ -1,15 +1,31 @@
 .c-nav{
+    background: $white;
+    transition: .6s;
+
+
+    &__bg{
+        background: #383838;
+        transition: .6s;
+    }
+
 
     &__brand-name {
         font-family: 'News Gothic BT',sans-serif;
         font-size: 28px;
         font-weight: 600;
+        color:$black;
+        transition: .6s;
     }
     &__list-item {
         font-family: 'Poppins', sans-serif;
         font-weight: normal;
         color:$black;
         font-size: 1.1rem;
+        transition: .6s;
+    }
+    &__color{
+        color:$white;
+        transition: .6s;
     }
     &__cart {
         margin-left: 130px;
@@ -37,6 +53,15 @@
         font-weight: normal;
         color:$white;
         font-size: 12px;
+        transition: .6s;
+        /*visibility: hidden;*/
+    }
+    &__change{
+        transition: .6s;
+        background: $blue!important;
+    }
+    &__show{
+        visibility: visible;
     }
     &__span {
         top:5px;
@@ -63,4 +88,9 @@
         }
     }
 
+}
+
+// set locally transition to bootstrap class
+.navbar{
+    transition: .6s;
 }
