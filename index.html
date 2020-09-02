@@ -11,16 +11,16 @@
 <body>
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top c-nav">
         <!-- Brand Name-->
 
-            <a href="index.html" class="text-dark c-nav__brand-name">FVSHION</a>
+            <a href="index.html" class="c-nav__brand-name">FVSHION</a>
             <i class="fas fa-shopping-cart d-lg-none c-nav__cart">
                 <span class="c-nav__span">0</span>
             </i>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars mt-1"></i>
+                <i class="fas fa-bars mt-1 c-nav__bars"></i>
             </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="myNav">
@@ -81,7 +81,7 @@
     <!-- End of Cart -->
     <!-- Hero -->
     <section class="py-lg-5">
-        <div class="container">
+        <div class="container py-5">
             <div class="row">
                 <div class="col-12 hero">
                         <img src="images/hero2.png" class="img-fluid">
@@ -102,7 +102,7 @@
                         <button class="hero__button">Shop now</button>
                     </div>
                 </div>
-                <div class="col-lg-6 p-0">
+                <div class="col-lg-6 p-0 py-2 py-lg-0">
                     <img src="images/hero3.png" class="img-fluid">
                     <div class="hero__content3">
                         <h2 class="hero__heading">Women Collection</h2>
@@ -116,6 +116,146 @@
     </section>
     <!-- End of Hero -->
     <!-- Products -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products__heading">New products</h2>
+                    <div class="products__divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 py-3">
+                    <ul class="list-unstyled">
+                        <li class="list-inline-item products__item products__item-active" data-filter="all">All</li>
+                        <li class="list-inline-item products__item" data-filter="men">Men's</li>
+                        <li class="list-inline-item products__item" data-filter="women">Women's</li>
+                        <li class="list-inline-item products__item" data-filter="kids">Kid's</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="filter all men">
+                            <div class="products__box">
+                                <img src="images/first-item.png" class="img-fluid">
+                                <i class="far fa-heart" id="heart"></i>
+                            </div>
+                            <div class="products__content">
+                                <h5>ingenieurDUSON T-shirt</h5>
+                                <strong>$29.00</strong>
+                            </div>
+                            <div class="products__buttons">
+                                <button class="products__btn-add">Add to cart</button>
+                                <button class="products__btn-view">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9 py-5 py-lg-0">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="filter all men">
+                            <div class="products__box">
+                                <img src="images/four.png" class="img-fluid">
+                                <i class="far fa-heart" id="heart"></i>
+                            </div>
+                            <div class="products__content">
+                                <h5>SyncJam T-shirt</h5>
+                                <strong>$16.00</strong>
+                            </div>
+                            <div class="products__buttons">
+                                <button class="products__btn-add">Add to cart</button>
+                                <button class="products__btn-view">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="filter all men">
+                            <div class="products__box">
+                                <img src="images/third.png" class="img-fluid">
+                                <i class="far fa-heart font-weight-bold" id="heart"></i>
+
+                            </div>
+                            <div class="products__content">
+                                <h5>Sqund T-shirt</h5>
+                                <strong>$12.00</strong>
+                            </div>
+                            <div class="products__buttons">
+                                <button class="products__btn-add">Add to cart</button>
+                                <button class="products__btn-view">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="filter all women">
+                            <div class="products__box">
+                                <img src="images/second.png" class="img-fluid">
+                                <i class="far fa-heart" id="heart"></i>
+                            </div>
+                            <div class="products__content">
+                                <h5>MontherBlack T-shirt</h5>
+                                <strong>$19.00</strong>
+                            </div>
+                            <div class="products__buttons">
+                                <button class="products__btn-add">Add to cart</button>
+                                <button class="products__btn-view">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9 py-5 py-lg-0">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="filter all women">
+                            <div class="products__box">
+                                <img src="images/five.png" class="img-fluid">
+                                <i class="far fa-heart" id="heart"></i>
+                            </div>
+                            <div class="products__content">
+                                <h5>YIREN WCG T-SHIRT
+                                </h5>
+                                <strong>$25.00</strong>
+                            </div>
+                            <div class="products__buttons">
+                                <button class="products__btn-add">Add to cart</button>
+                                <button class="products__btn-view">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="filter all women">
+                            <div class="products__box">
+                                <img src="images/six.png" class="img-fluid">
+                                <i class="far fa-heart font-weight-bold" id="heart"></i>
+                            </div>
+                            <div class="products__content">
+                                <h5>LeaSeTheRoad T-shirt
+                                </h5>
+                                <strong>$8.00</strong>
+                            </div>
+                            <div class="products__buttons">
+                                <button class="products__btn-add">Add to cart</button>
+                                <button class="products__btn-view">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button>More products</button>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- End of Products -->
 
 
@@ -126,9 +266,9 @@
 
 
 
-    <script src="js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
