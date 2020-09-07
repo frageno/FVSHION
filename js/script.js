@@ -44,3 +44,10 @@ barsIcon.addEventListener('click', function(){
         barsIcon.classList.remove('fa-times');
     }
 });
+
+// Open more products
+
+let more = document.getElementById('more');
+more.addEventListener('click', ()=>{
+    location.href="more-new-products.html";
+});
