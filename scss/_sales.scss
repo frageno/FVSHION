@@ -1,0 +1,40 @@
+.sales {
+
+
+    &__newsletter{
+        height:100vh;
+        background: url(../images/newsletter.jpg)center center /cover;
+        opacity: .8;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include medium-up{
+            height: 50vh;
+        }
+    }
+    &__newsletter-heading{
+        color:$white;
+        padding-bottom: 20px;
+    }
+    &__newsletter-input
+    {
+        width: 75%;
+        padding: 10px;
+        @include medium-up{
+            width: 30%;
+        }
+    }
+    &__newsletter-btn{
+        display: block;
+        margin:0 auto;
+        width: 75%;
+        margin-top: 5px;
+
+        @include medium-up{
+            width: 30%;
+
+        }
+    }
+}

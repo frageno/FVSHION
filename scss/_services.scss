@@ -1,0 +1,17 @@
+.services {
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+    }
+    &__heading {
+        padding-top: 15px;
+        color:$blue;
+    }
+    &__text{
+        padding-top: 15px;
+        color:$gray-light;
+    }
+}

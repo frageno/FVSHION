@@ -1,0 +1,54 @@
+.about {
+    position: relative;
+    &__block {
+        position: absolute;
+        top:22px;
+        left:180px;
+        width: 140px;
+        height: 55px;
+        background: $secondary;
+        z-index: -1;
+        animation: movingBlock 6s ease infinite;
+
+        @include medium-up{
+            top:14px;
+            left:319px;
+            height:45px;
+            width: 240px;
+        }
+    }
+    &__block2 {
+        position: absolute;
+        top:22px;
+        left:180px;
+        width: 140px;
+        height: 55px;
+        background: $secondary;
+        z-index: -1;
+        animation: movingBlock 6s ease infinite;
+
+        @include medium-up{
+            top:14px;
+            left:119px;
+            height:45px;
+            width: 240px;
+        }
+    }
+    &__text{
+        font-family: 'Poppins',sans-serif;
+        color:$gray-light;
+    }
+}
+
+@keyframes movingBlock {
+    0%{
+        transform: translateX(-20%);
+    }
+    50%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-20%);
+
+    }
+}

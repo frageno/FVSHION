@@ -1,0 +1,24 @@
+.footer{
+    &__brand-name{
+        font-family: 'News Gothic BT',sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        color:$black;
+        transition: .6s;
+    }
+    &__list-item{
+        display: inline-block;
+        list-style-type: none;
+
+    }
+    &__links {
+        color:$black;
+    }
+    &__span {
+        color:$primary;
+    }
+    &__copy {
+        border-top:1px solid $gray-light;
+
+    }
+}

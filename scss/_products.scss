@@ -90,7 +90,20 @@
             border:0;
         }
     }
+    &__hide {
+        display: none;
 
+    }
 
+    &__hidden{
+        display: none;
+    }
+    &__show{
+        .products__hidden{
+            display: block;
+        }
+    }
 
 }
+
+
