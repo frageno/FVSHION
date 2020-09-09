@@ -1,0 +1,132 @@
+{
+    "items":[
+        {
+            "sys": {"id": "1"},
+            "fields": {
+                "title": "ingenieurDUSON T-shirt",
+                "price": 20,
+                "sex": "men",
+                "show": "",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/first-item.png"
+                    }}
+                }
+            }
+
+        },
+        {
+            "sys": {"id": "2"},
+            "fields": {
+                "title": "SyncJam T-shirt",
+                "price": 16,
+                "sex": "men",
+                "show": "",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/four.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "3"},
+            "fields": {
+                "title": "Sqund T-shirt",
+                "price": 12,
+                "sex": "men",
+                "show": "",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/third.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "4"},
+            "fields": {
+                "title": "MontherBlack T-shirt",
+                "price": 19,
+                "sex": "women",
+                "show": "",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/second.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "5"},
+            "fields": {
+                "title": "YIREN WCG T-SHIRT",
+                "price": 25,
+                "sex": "women",
+                "show": "",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/five.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "6"},
+            "fields": {
+                "title": "LeaSeTheRoad T-shirt",
+                "price": 8,
+                "sex": "women",
+                "show": "",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/six.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "7"},
+            "fields": {
+                "title": "2FingerS T-shirt",
+                "price": 15.55,
+                "sex": "men",
+                "show": "products__hidden",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/seven.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "8"},
+            "fields": {
+                "title": "Checkered shirt",
+                "price": 49.99,
+                "sex": "men",
+                "show": "products__hidden",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/eight.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "9"},
+            "fields": {
+                "title": "Checkered shirt",
+                "price": 34.99,
+                "sex": "men",
+                "show": "products__hidden",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/nine.png"
+                    }}
+                }
+            }
+        }
+
+    ]
+}
