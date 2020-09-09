@@ -47,7 +47,7 @@
             <i class="far fa-heart ml-lg-5 c-nav__cart-desktop">
                 <span class="c-nav__span-desktop">2</span>
             </i>
-            <i class="fas fa-shopping-cart d-none d-lg-block c-nav__cart-desktop mr-5">
+            <i class="fas fa-shopping-cart d-none d-lg-block c-nav__cart-desktop mr-5" id="cart">
                 <span class="c-nav__span-desktop">0</span>
             </i>
             <button class="d-block c-nav__button">Login</button>
@@ -60,8 +60,8 @@
         <div class="c-cart__overlay">
             <div class="c-cart">
             <div class="c-cart__body">
-                <span class="c-cart-close">
-                    <i class="fas fa-times-circle"></i>
+                <span class="c-cart__close" id="cart-close">
+                    <i class="fas fa-times-circle fa-2x"></i>
                 </span>
                 <h2>Your cart</h2>
                 <!-- cart item -->
@@ -134,122 +134,9 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="filter all men">
-                            <div class="products__box">
-                                <img src="images/first-item.png" class="img-fluid">
-                                <i class="far fa-heart" id="heart"></i>
-                            </div>
-                            <div class="products__content">
-                                <h5>ingenieurDUSON T-shirt</h5>
-                                <strong>$29.00</strong>
-                            </div>
-                            <div class="products__buttons">
-                                <button class="products__btn-add">Add to cart</button>
-                                <button class="products__btn-view">View</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9 py-5 py-lg-0">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="filter all men">
-                            <div class="products__box">
-                                <img src="images/four.png" class="img-fluid">
-                                <i class="far fa-heart" id="heart"></i>
-                            </div>
-                            <div class="products__content">
-                                <h5>SyncJam T-shirt</h5>
-                                <strong>$16.00</strong>
-                            </div>
-                            <div class="products__buttons">
-                                <button class="products__btn-add">Add to cart</button>
-                                <button class="products__btn-view">View</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="filter all men">
-                            <div class="products__box">
-                                <img src="images/third.png" class="img-fluid">
-                                <i class="far fa-heart font-weight-bold" id="heart"></i>
+            <div class="row products__center"></div>
 
-                            </div>
-                            <div class="products__content">
-                                <h5>Sqund T-shirt</h5>
-                                <strong>$12.00</strong>
-                            </div>
-                            <div class="products__buttons">
-                                <button class="products__btn-add">Add to cart</button>
-                                <button class="products__btn-view">View</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row py-5">
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="filter all women">
-                            <div class="products__box">
-                                <img src="images/second.png" class="img-fluid">
-                                <i class="far fa-heart" id="heart"></i>
-                            </div>
-                            <div class="products__content">
-                                <h5>MontherBlack T-shirt</h5>
-                                <strong>$19.00</strong>
-                            </div>
-                            <div class="products__buttons">
-                                <button class="products__btn-add">Add to cart</button>
-                                <button class="products__btn-view">View</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9 py-5 py-lg-0">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="filter all women">
-                            <div class="products__box">
-                                <img src="images/five.png" class="img-fluid">
-                                <i class="far fa-heart" id="heart"></i>
-                            </div>
-                            <div class="products__content">
-                                <h5>YIREN WCG T-SHIRT
-                                </h5>
-                                <strong>$25.00</strong>
-                            </div>
-                            <div class="products__buttons">
-                                <button class="products__btn-add">Add to cart</button>
-                                <button class="products__btn-view">View</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div class="filter all women">
-                            <div class="products__box">
-                                <img src="images/six.png" class="img-fluid">
-                                <i class="far fa-heart font-weight-bold" id="heart"></i>
-                            </div>
-                            <div class="products__content">
-                                <h5>LeaSeTheRoad T-shirt
-                                </h5>
-                                <strong>$8.00</strong>
-                            </div>
-                            <div class="products__buttons">
-                                <button class="products__btn-add">Add to cart</button>
-                                <button class="products__btn-view">View</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-12 text-center">
                     <button id="more">More products</button>
                 </div>
@@ -340,7 +227,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h3 class="sales__newsletter-heading">Sign up for our emails including latest trends, fashion & offers.</h3>
-                    <form class="py-4 py-lg-0">
+                    <form class="py-4">
                         <input type="email" placeholder="Enter email" class="sales__newsletter-input">
                         <button type="submit" class="sales__newsletter-btn"> Send
                         </button>
@@ -420,7 +307,7 @@
     <!-- Copyright -->
     <div class="contanier-fluid footer__copy">
         <div class="text-center">
-            <p class="mt-3">Copyright &copy; All rights reserved | This template is made with <i class="fas fa-heartbeat"></i> Simon</p>
+            <p class="mt-3">Copyright &copy; All rights reserved | This template is made with <i class="fas fa-heartbeat"></i> by Simon</p>
         </div>
     </div>
     <!-- End of Copyright -->
