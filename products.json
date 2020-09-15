@@ -7,9 +7,10 @@
                 "price": 20,
                 "sex": "men",
                 "show": "",
+                "type": "tshirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/first-item.png"
+                        "url": "./images/clothes/1.png"
                     }}
                 }
             }
@@ -22,9 +23,10 @@
                 "price": 16,
                 "sex": "men",
                 "show": "",
+                "type": "tshirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/four.png"
+                        "url": "./images/clothes/4.png"
                     }}
                 }
             }
@@ -36,9 +38,10 @@
                 "price": 12,
                 "sex": "men",
                 "show": "",
+                "type": "tshirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/third.png"
+                        "url": "./images/clothes/3.png"
                     }}
                 }
             }
@@ -50,9 +53,10 @@
                 "price": 19,
                 "sex": "women",
                 "show": "",
+                "type": "w-tshirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/second.png"
+                        "url": "./images/clothes/2.png"
                     }}
                 }
             }
@@ -64,9 +68,10 @@
                 "price": 25,
                 "sex": "women",
                 "show": "",
+                "type": "w-tshirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/five.png"
+                        "url": "./images/clothes/5.png"
                     }}
                 }
             }
@@ -78,9 +83,10 @@
                 "price": 8,
                 "sex": "women",
                 "show": "",
+                "type": "w-tshirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/six.png"
+                        "url": "./images/clothes/6.png"
                     }}
                 }
             }
@@ -92,9 +98,10 @@
                 "price": 15.55,
                 "sex": "men",
                 "show": "products__hidden",
+                "type": "tshirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/seven.png"
+                        "url": "./images/clothes/7.png"
                     }}
                 }
             }
@@ -106,9 +113,10 @@
                 "price": 49.99,
                 "sex": "men",
                 "show": "products__hidden",
+                "type": "shirt",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/eight.png"
+                        "url": "./images/clothes/8.png"
                     }}
                 }
             }
@@ -116,17 +124,184 @@
         {
             "sys": {"id": "9"},
             "fields": {
-                "title": "Checkered shirt",
+                "title": "Longsleeve",
                 "price": 34.99,
                 "sex": "men",
                 "show": "products__hidden",
+                "type": "longsleeve",
                 "image": {
                     "fields": {"file": {
-                        "url": "./images/clothes/nine.png"
+                        "url": "./images/clothes/9.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "10"},
+            "fields": {
+                "title": "Nike Hoodie",
+                "price": 55.99,
+                "sex": "men",
+                "show": "products__hidden",
+                "type": "hoodie",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/10.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "11"},
+            "fields": {
+                "title": "Man Hoodie",
+                "price": 25,
+                "sex": "men",
+                "show": "products__hidden",
+                "type": "hoodie",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/11.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "12"},
+            "fields": {
+                "title": "PinkHoodie",
+                "price": 17.99,
+                "sex": "men",
+                "show": "products__hidden",
+                "type": "hoodie",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/12.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "13"},
+            "fields": {
+                "title": "Black-longsleeve",
+                "price": 13.99,
+                "sex": "men",
+                "show": "products__hidden",
+                "type": "longsleeve",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/13.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "14"},
+            "fields": {
+                "title": "Survive Hoodie",
+                "price": 27.99,
+                "sex": "women",
+                "show": "products__hidden",
+                "type": "w-hoodie",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/14.png"
+                    }}
+                }
+            }
+        }, {
+            "sys": {"id": "15"},
+            "fields": {
+                "title": "FILA BLUE HOODIE",
+                "price": 47.99,
+                "sex": "men",
+                "show": "products__hidden",
+                "type": "hoodie",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/15.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "16"},
+            "fields": {
+                "title": "Red-flowers spring dress",
+                "price": 19.99,
+                "sex": "women",
+                "show": "products__hidden",
+                "type": "w-dress",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/16.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "17"},
+            "fields": {
+                "title": "Boots",
+                "price": 35,
+                "sex": "accessories",
+                "show": "products__hidden",
+                "type": "e-boots",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/17.png"
+                    }}
+                }
+            }
+
+        },
+        {
+            "sys": {"id": "18"},
+            "fields": {
+                "title": "Bag",
+                "price": 8,
+                "sex": "accessories",
+                "show": "products__hidden",
+                "type": "bags",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/18.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "19"},
+            "fields": {
+                "title": "Wolf-Bag",
+                "price": 12,
+                "sex": "accessories",
+                "show": "products__hidden",
+                "type": "bags",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/19.png"
+                    }}
+                }
+            }
+        },
+        {
+            "sys": {"id": "20"},
+            "fields": {
+                "title": "Long Boots",
+                "price": 22.99,
+                "sex": "accessories",
+                "show": "products__hidden",
+                "type": "e-boots",
+                "image": {
+                    "fields": {"file": {
+                        "url": "./images/clothes/20.png"
                     }}
                 }
             }
         }
+
 
     ]
 }
