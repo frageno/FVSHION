@@ -8,11 +8,15 @@ $('.products__item').click(function(){
         $('.filter').not('.'+value).hide(300);
         $('.filter').filter('.'+value).show(300);
     }
+
 });
+
+
 
 // Adding active class on clicked list item and removing this class for rest of them
 $('.products__item').click(function(){
     $(this).addClass('products__item-active').siblings().removeClass('products__item-active');
+
 });
 
 // Add background and change colors to navbar elements during scrolling
@@ -65,6 +69,7 @@ cartBtn.addEventListener('click', ()=>{
     cartBody.classList.toggle('c-cart__visible')
     cartOverlay.classList.toggle('c-cart__visible');
 });
+
 cartClose.addEventListener('click', () => {
     cartBody.classList.remove('c-cart__visible')
     cartOverlay.classList.remove('c-cart__visible');
@@ -83,10 +88,10 @@ class Products {
             let data = await result.json();
             let products = data.items;
             products = products.map(item =>{
-                const {title,price,sex,show} = item.fields;
+                const {title,price,sex,show,type} = item.fields;
                 const {id} = item.sys;
                 const image = item.fields.image.fields.file.url;
-                return {id,title,price,sex,image,show};
+                return {id,title,price,sex,image,show,type};
             })
             return products;
         }
@@ -101,9 +106,10 @@ class UI{
         let result = '';
         products.forEach(product => {
             result += `
-            <div class="col-lg-4 col-md-6 col-sm-9 py-3 py-lg-5 ${product.show}">
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="filter all ${product.sex}">
+
+            <div class="col-lg-4 col-md-6 col-sm-9 py-3 py-lg-4 filter all ${product.sex} ${product.type}">
+
+                        <div class="${product.show}">
                             <div class="products__box">
                                 <img src=${product.image} class="img-fluid">
                                 <i class="far fa-heart" id="heart"></i>
@@ -116,25 +122,47 @@ class UI{
                                 <button class="products__btn-add">Add to cart</button>
                                 <button class="products__btn-view">View</button>
                             </div>
-                    </div>
-                </div>
+                        </div>
             </div>
+
             `;
 
         });
 
 
         productDOM.innerHTML = result;
+        // initiation count
+        let count = 0;
 
+        // Click for every heart which increase count and alsoe addind and removing class
+        document.querySelectorAll('#heart').forEach(item =>{
+            item.addEventListener('click', event =>{
+                item.classList.toggle('fas');
+                let heartCount = document.getElementById('heart-count');
+                if(item.classList.contains('fas')){
+                    count++;
+                    heartCount.innerText = count;
+                }
+                else {
+                    count--;
+                    heartCount.innerText = count;
+                }
+            });
+
+        });
     }
 }
 
-
+// Listener for DOM Content
 document.addEventListener('DOMContentLoaded', ()=>{
     const ui = new UI();
     const products = new Products();
 
     products.getProduct().then(products => ui.displayProducts(products));
+
 });
+
+
+
 
 
