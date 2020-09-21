@@ -55,27 +55,68 @@
     <!-- End of navbar-->
     <!-- Cart -->
     <div class="container-fluid">
+
         <div class="c-cart__overlay">
-            <div class="c-cart">
-            <div class="c-cart__body">
-                <span class="c-cart__close" id="cart-close">
-                    <i class="fas fa-times-circle fa-2x"></i>
-                </span>
-                <h2>Your cart</h2>
-                <!-- cart item -->
-                <div id="cart-body"></div>
-                <!-- end of cart item -->
-            <!-- cart footer -->
-            <div class="c-cart__footer">
-                <h3>Total: $0</h3>
-                <button>Clear cart</button>
-            </div>
-            <!-- end of cart footer -->
+
+
+                    <div class="c-cart">
+                        <!-- cart info -->
+                        <div class="c-cart__info">
+                            <h2>Your cart:</h2>
+                            <h3>Total: $<span id="c-cart__total"></span></h3>
+                            <button class="my-3">Clear cart</button>
+
+                        </div>
+
+                        <!-- end of cart info -->
+                    </div>
+
+
+
+                    <div class="c-cart__content">
+
+                        <span class="c-cart__close" id="cart-close">
+                                <i class="fas fa-times-circle fa-2x"></i>
+                        </span>
+                        <div class="c-cart__body">
+                            <img src="images/clothes/1.png" class="img-fluid">
+                            <div class="c-cart__price">
+                                <h5>sdfsdfsdfsdfsdfs</h5>
+                                <strong>$20</strong>
+
+                            </div>
+                        </div>
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+    <!-- End of Cart -->
+    <!-- Favourite Cart -->
+    <div class="container-fluid">
+        <div class="c-cart__overlay">
+            <div class="c-cart__favourite">
+            <div class="c-cart__favourite-body">
+                <div class="cart-content">
+                    <div class="c-cart__favouritebody">
+                        <span class="c-cart__close" id="cart-close">
+                            <i class="fas fa-times-circle fa-2x"></i>
+                        </span>
+                    <!-- cart footer -->
+                    <div class="c-cart__footer">
+                        <h3 id="cart-total">Total: $0</h3>
+                        <button>Clear cart</button>
+                    </div>
+                    <!-- end of cart footer -->
+                </div>
             </div>
         </div>
         </div>
     </div>
-    <!-- End of Cart -->
+    <!-- End of Favourite Cart -->
 
     <!-- Products -->
     <section class="py-5">
