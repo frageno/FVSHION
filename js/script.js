@@ -78,8 +78,13 @@ cartClose.addEventListener('click', () => {
 // Getting elements from DOM
 
 const productDOM = document.querySelector('.products__center');
-
+let cartTotal = document.querySelector('#c-cart__total');
+let heartCount = document.querySelector('#heart-count');
+const cartContent = document.querySelector('.c-cart__content');
+// Cart
 let cart = [];
+// Buttons
+let buttonsDOM = [];
 // Access to json file
 class Products {
     async getProduct(){
@@ -107,12 +112,12 @@ class UI{
         products.forEach(product => {
             result += `
 
-            <div class="col-lg-4 col-md-6 col-sm-9 py-3 py-lg-4 filter all ${product.sex} ${product.type}">
+            <div class="col-lg-4 col-md-6 col-sm-9 py-4 py-lg-2 filter all ${product.sex} ${product.type}">
 
                         <div class="${product.show}">
                             <div class="products__box">
                                 <img src=${product.image} class="img-fluid">
-                                <i class="far fa-heart" id="heart"></i>
+                                <button class="far fa-heart" id="heart" data-id=${product.id}></button>
                             </div>
                             <div class="products__content">
                                 <h5>${product.title}</h5>
@@ -122,6 +127,7 @@ class UI{
                                 <button class="products__btn-add">Add to cart</button>
                                 <button class="products__btn-view">View</button>
                             </div>
+
                         </div>
             </div>
 
@@ -131,25 +137,86 @@ class UI{
 
 
         productDOM.innerHTML = result;
-        // initiation count
-        let count = 0;
 
-        // Click for every heart which increase count and alsoe addind and removing class
-        document.querySelectorAll('#heart').forEach(item =>{
-            item.addEventListener('click', event =>{
-                item.classList.toggle('fas');
-                let heartCount = document.getElementById('heart-count');
-                if(item.classList.contains('fas')){
-                    count++;
-                    heartCount.innerText = count;
-                }
-                else {
-                    count--;
-                    heartCount.innerText = count;
-                }
-            });
+
+    }
+    getHeartButtons(){
+        const btns = [...document.querySelectorAll('#heart')];
+        buttonsDOM = btns;
+        btns.forEach(button=>{
+            let id = button.dataset.id;
+            let inCart = cart.find(item => item.id === id);
+            if(inCart){
+                button.classList.toggle('fas');
+                button.disabled = true;
+
+            }
+            else {
+
+                button.addEventListener('click', (event)=>{
+                    event.target.className = 'fas fa-heart';
+                    event.target.disabled = true;
+
+                    // Get product from products
+                    let cartItem = {...Storage.getProduct(id),amount:1};
+                    // Add product to the cart
+                    cart= [...cart,cartItem];
+                    // Save cart in local storage
+                    Storage.saveCart(cart);
+                    // Set cart values
+                    this.setCartValues(cart);
+                    // Display cart item
+                    this.addCartItem(cartItem);
+                    // Show the cart
+                });
+
+            }
 
         });
+    }
+    setCartValues(cart){
+        let tempTotal = 0;
+        let totalCount = 0;
+
+        cart.map(item=>{
+            tempTotal += item.price * item.amount;
+            totalCount += item.amount;
+        });
+        cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+        console.log(cartTotal);
+        heartCount.innerText = totalCount;
+
+
+    }
+    addCartItem(item){
+            const div = document.createElement('div');
+            div.classList.add('c-cart__body');
+            div.innerHTML = `
+
+
+
+
+
+
+
+        `;
+
+        cartContent.appendChild(div);
+
+    }
+}
+
+// Local Storage
+class Storage{
+    static saveProduct(products){
+        localStorage.setItem("products",JSON.stringify(products))
+    }
+    static getProduct(id){
+        let products = JSON.parse(localStorage.getItem('products'));
+        return products.find(product => product.id === id);
+    }
+    static saveCart(cart){
+        localStorage.setItem('cart',JSON.stringify(cart));
     }
 }
 
@@ -158,8 +225,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const ui = new UI();
     const products = new Products();
 
-    products.getProduct().then(products => ui.displayProducts(products));
-
+    products.getProduct().then(products => {
+    ui.displayProducts(products)
+    Storage.saveProduct(products);
+}).then(()=>{
+    ui.getHeartButtons();
+    });
 });
 
 
