@@ -45,7 +45,7 @@
                 </li>
             </ul>
             <i class="far fa-heart ml-lg-5 c-nav__cart-desktop">
-                <span class="c-nav__span-desktop">2</span>
+                <span class="c-nav__span-desktop" id="heart-count">0</span>
             </i>
             <i class="fas fa-shopping-cart d-none d-lg-block c-nav__cart-desktop mr-5" id="cart">
                 <span class="c-nav__span-desktop">0</span>
@@ -70,7 +70,7 @@
                 <!-- end of cart item -->
             <!-- cart footer -->
             <div class="c-cart__footer">
-                <h3>Total: $0</h3>
+                <h3 id="cart-total">Total: $0</h3>
                 <button>Clear cart</button>
             </div>
             <!-- end of cart footer -->
@@ -116,7 +116,7 @@
     </section>
     <!-- End of Hero -->
     <!-- Products -->
-    <section class="py-5">
+    <section class="pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -130,14 +130,14 @@
                         <li class="list-inline-item products__item products__item-active" data-filter="all">All</li>
                         <li class="list-inline-item products__item" data-filter="men">Men's</li>
                         <li class="list-inline-item products__item" data-filter="women">Women's</li>
-                        <li class="list-inline-item products__item" data-filter="kids">Kid's</li>
+                        <li class="list-inline-item products__item" data-filter="accessories">Accessorie's</li>
                     </ul>
                 </div>
             </div>
             <div class="row products__center"></div>
 
-            <div class="row py-5">
-                <div class="col-12 text-center">
+            <div class="row pb-3">
+                <div class="col-12 text-center products__more">
                     <button id="more">More products</button>
                 </div>
             </div>
