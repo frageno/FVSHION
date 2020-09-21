@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    visibility: hidden;
+    /*visibility: hidden;*/
     transform: translateY(-100px);
 
     &__overlay{
@@ -21,12 +21,13 @@
     height: 100%;
     z-index: 9999;
     background: $secondary;
-    visibility: hidden;
+    /*visibility: hidden;*/
     transform: translateY(-1000px);
     transition: .6s;
 
 
     }
+
     &__close {
         position: absolute;
         top:10px;
@@ -41,4 +42,6 @@
 
 
     }
+
+
 }
