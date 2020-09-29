@@ -64,23 +64,13 @@ let cartClose = document.getElementById('cart-close');
 let cartOverlay = document.querySelector('.c-cart__overlay');
 let cartBody = document.querySelector('.c-cart');
 
-// Listeners for open and close the cart
-cartBtn.addEventListener('click', ()=>{
-    cartBody.classList.toggle('c-cart__visible')
-    cartOverlay.classList.toggle('c-cart__visible');
-});
-
-cartClose.addEventListener('click', () => {
-    cartBody.classList.remove('c-cart__visible')
-    cartOverlay.classList.remove('c-cart__visible');
-});
 
 // Getting elements from DOM
 
 const productDOM = document.querySelector('.products__center');
 let cartTotal = document.querySelector('#c-cart__total');
-let heartCount = document.querySelector('#heart-count');
-const cartContent = document.querySelector('.c-cart__content');
+let cartCount = document.querySelector('#cart-count');
+const cartContent = document.querySelector('.c-cart__item');
 // Cart
 let cart = [];
 // Buttons
@@ -117,14 +107,14 @@ class UI{
                         <div class="${product.show}">
                             <div class="products__box">
                                 <img src=${product.image} class="img-fluid">
-                                <button class="far fa-heart" id="heart" data-id=${product.id}></button>
+                                <button class="far fa-heart" id="heart"></button>
                             </div>
                             <div class="products__content">
                                 <h5>${product.title}</h5>
                                 <strong>$${product.price}</strong>
                             </div>
                             <div class="products__buttons">
-                                <button class="products__btn-add">Add to cart</button>
+                                <button class="products__btn-add" id="add" data-id=${product.id}>Add to cart</button>
                                 <button class="products__btn-view">View</button>
                             </div>
 
@@ -140,21 +130,20 @@ class UI{
 
 
     }
-    getHeartButtons(){
-        const btns = [...document.querySelectorAll('#heart')];
+    getBagButtons(){
+        const btns = [...document.querySelectorAll('#add')];
         buttonsDOM = btns;
         btns.forEach(button=>{
             let id = button.dataset.id;
             let inCart = cart.find(item => item.id === id);
-            if(inCart){
-                button.classList.toggle('fas');
+            if(inCart){ 
                 button.disabled = true;
 
             }
             else {
 
                 button.addEventListener('click', (event)=>{
-                    event.target.className = 'fas fa-heart';
+                    event.target.innerText = 'Added to cart';
                     event.target.disabled = true;
 
                     // Get product from products
@@ -183,26 +172,48 @@ class UI{
             totalCount += item.amount;
         });
         cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
-        console.log(cartTotal);
-        heartCount.innerText = totalCount;
+        cartCount.innerText = totalCount;
 
 
     }
     addCartItem(item){
             const div = document.createElement('div');
-            div.classList.add('c-cart__body');
+            div.classList.add('c-cart__content');
             div.innerHTML = `
-
-
-
-
-
-
+            <img src=${item.image}>
+            <div class="c-cart__info">
+                <h4>${item.title}</h4>
+                <h4>Price : $${item.price}</h4>
+                <i class="fas fa-arrow-circle-left"></i>
+                ${item.amount}
+                <i class="fas fa-arrow-circle-right"></i>
+                <span class="d-block">Remove</span>
+                
+            </div>
+            
 
         `;
 
         cartContent.appendChild(div);
 
+    }
+    showCart() {
+        cartBody.classList.add('c-cart__visible');
+        cartOverlay.classList.add('c-cart__visible');
+    }
+    hideCart(){
+        cartBody.classList.remove('c-cart__visible');
+        cartOverlay.classList.remove('c-cart__visible');
+    }
+    setupAPP(){
+        cart = Storage.getCart();
+        this.setCartValues(cart);
+        this.populateCart(cart);
+        cartBtn.addEventListener('click',this.showCart);
+        cartClose.addEventListener('click',this.hideCart);
+    }
+    populateCart(cart){
+        cart.forEach(item =>this.addCartItem(item));
     }
 }
 
@@ -218,18 +229,24 @@ class Storage{
     static saveCart(cart){
         localStorage.setItem('cart',JSON.stringify(cart));
     }
+    static getCart(){
+        return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')): [];
+    }
 }
 
 // Listener for DOM Content
 document.addEventListener('DOMContentLoaded', ()=>{
     const ui = new UI();
     const products = new Products();
+    // Setup APP
+
+    ui.setupAPP();
 
     products.getProduct().then(products => {
     ui.displayProducts(products)
     Storage.saveProduct(products);
 }).then(()=>{
-    ui.getHeartButtons();
+    ui.getBagButtons();
     });
 });
 
