@@ -137,13 +137,18 @@ class UI{
             let id = button.dataset.id;
             let inCart = cart.find(item => item.id === id);
             if(inCart){ 
+                button.style.color = "#000";
+                button.style.pointerEvents = 'none';
+                button.innerText = "In Bag";
                 button.disabled = true;
 
             }
             else {
 
                 button.addEventListener('click', (event)=>{
-                    event.target.innerText = 'Added to cart';
+                    event.target.style.pointerEvents = 'none';
+                    event.target.style.color = "#000";
+                    event.target.innerText = 'In Bag';
                     event.target.disabled = true;
 
                     // Get product from products
