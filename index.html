@@ -44,11 +44,11 @@
                     <a href="#" class="nav-link c-nav__list-item">FAQ</a>
                 </li>
             </ul>
-            <i class="far fa-heart ml-lg-5 c-nav__cart-desktop">
+            <i class="far fa-heart ml-lg-5 c-nav__cart-desktop" id="heart-cart">
                 <span class="c-nav__span-desktop" id="heart-count">0</span>
             </i>
             <i class="fas fa-shopping-cart d-none d-lg-block c-nav__cart-desktop mr-5" id="cart">
-                <span class="c-nav__span-desktop">0</span>
+                <span class="c-nav__span-desktop" id="cart-count">0</span>
             </i>
             <button class="d-block c-nav__button">Login</button>
         </div>
@@ -56,29 +56,36 @@
     </nav>
     <!-- End of navbar-->
     <!-- Cart -->
-    <div class="container-fluid">
+    <div class="container">
         <div class="c-cart__overlay">
             <div class="c-cart">
             <div class="c-cart__body">
                 <span class="c-cart__close" id="cart-close">
                     <i class="fas fa-times-circle fa-2x"></i>
                 </span>
-                <h2>Your cart</h2>
+                <h2 class="text-center py-5">Your cart</h2>
                 <!-- cart item -->
-                <img src="" alt="">
-                <h2>T-shirt</h2>
+                <div class="c-cart__item"></div>
                 <!-- end of cart item -->
+            
             <!-- cart footer -->
             <div class="c-cart__footer">
-                <h3 id="cart-total">Total: $0</h3>
-                <button>Clear cart</button>
+                <h3>Total Cost: $<span id="c-cart__total"></span></h3>
+                <button class="c-cart__clear">Clear cart</button>
             </div>
             <!-- end of cart footer -->
-            </div>
+        </div>
         </div>
         </div>
     </div>
-    <!-- End of Cart -->
+    <!-- End of Cart -->    
+    <!-- Single item -->
+    <div class="item__view">
+    <div class="item__overlay">
+    <div class="item__body"></div>
+    </div>
+    </div>
+    <!-- End of Single item -->
     <!-- Hero -->
     <section class="py-lg-5">
         <div class="container py-5">
@@ -89,6 +96,7 @@
                         <h2 class="hero__heading">Summer Collection</h2>
                         <p class="hero__subheading">Let’s take a look at new summer collection inspired by summer trends in 2020 from the entire world</p>
                         <button class="hero__button">Shop now</button>
+                        
                     </div>
                 </div>
             </div>
@@ -116,28 +124,39 @@
     </section>
     <!-- End of Hero -->
     <!-- Products -->
-    <section class="pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="products__heading">New products</h2>
-                    <div class="products__divider"></div>
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row pt-5">
+                <div class="col-12 text-center">
+                    <h2 class="products__heading">All products</h2>
+                    <div class="products__divider mx-auto"></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 py-3">
+                <div class="col-12 py-3 text-center">
                     <ul class="list-unstyled">
                         <li class="list-inline-item products__item products__item-active" data-filter="all">All</li>
-                        <li class="list-inline-item products__item" data-filter="men">Men's</li>
-                        <li class="list-inline-item products__item" data-filter="women">Women's</li>
-                        <li class="list-inline-item products__item" data-filter="accessories">Accessorie's</li>
+                        <div class="products__dropdown">
+                        <li class="list-inline-item products__item products__dropdown-btn" data-filter="men">Men's</li>
+                            
+                        </div>
+                        <div class="products__dropdown">
+                            <li class="list-inline-item products__item products__dropdown-btn" data-filter="women">Women's</li>
+                                
+                            </div>
+                            <div class="products__dropdown">
+                                <li class="list-inline-item products__item products__dropdown-btn" data-filter="accessories">Accessorie's</li>
+                                    
+                                </div>
                     </ul>
                 </div>
             </div>
-            <div class="row products__center"></div>
+            <div class="row products__center">
 
-            <div class="row pb-3">
-                <div class="col-12 text-center products__more">
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center">
                     <button id="more">More products</button>
                 </div>
             </div>
