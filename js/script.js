@@ -59,18 +59,22 @@ more.addEventListener('click', ()=>{
 
 
 // Getting cart DOM from html
-let cartBtn = document.getElementById('cart');
-let cartClose = document.getElementById('cart-close');
+let cartBtn = document.querySelector('#cart');
+let heartBtn = document.querySelector('#heart-cart');
+let cartClose = document.querySelector('#cart-close');
 let cartOverlay = document.querySelector('.c-cart__overlay');
 let cartBody = document.querySelector('.c-cart');
 
 
+
+
 // Getting elements from DOM
 
-const productDOM = document.querySelector('.products__center');
+let productDOM = document.querySelector('.products__center');
 let cartTotal = document.querySelector('#c-cart__total');
 let cartCount = document.querySelector('#cart-count');
-const cartContent = document.querySelector('.c-cart__item');
+let cartContent = document.querySelector('.c-cart__item');
+
 // Cart
 let cart = [];
 // Buttons
@@ -115,7 +119,7 @@ class UI{
                             </div>
                             <div class="products__buttons">
                                 <button class="products__btn-add" id="add" data-id=${product.id}>Add to cart</button>
-                                <button class="products__btn-view">View</button>
+                                <button class="products__btn-view" data-id=${product.id}>View</button>
                             </div>
 
                         </div>
@@ -128,7 +132,72 @@ class UI{
 
         productDOM.innerHTML = result;
 
+        
 
+
+    }
+    showSingleProduct(products){
+        let viewBtn = [...document.querySelectorAll('.products__btn-view')];
+        let viewBody = document.querySelector('.item__view');
+        let viewOverlay = document.querySelector('.item__overlay');
+        let viewContent = document.querySelector('.item__body');
+        let display = '';
+
+        viewBtn.forEach(button => {
+            button.addEventListener('click', ()=>{
+                viewBody.classList.add('item__show');
+                viewOverlay.classList.add('item__show');
+                let id = button.dataset.id;
+                products.forEach(product => {
+                    if( id === product.id){
+                       
+                            display = `
+                            <div class="container-fluid py-5">
+                            <div class="container py-5">
+                            <div class="row">
+                                <div class="col-lg-6 item">
+                                    <img src=${product.image} class="img-fluid">
+                                </div>
+                                <div class="col-lg-6 item__second-column">
+                                    <h4 class="item__heading">${product.title}</h4>
+                                    <h4 class="item__price">Price $${product.price}</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, magni mollitia maiores distinctio, dignissimos, fugiat minus cupiditate reprehenderit deserunt quaerat eligendi expedita!</p>
+                                    
+                                    <div class="">
+                                        <select id="">
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                        </select>
+                                    </div>
+                                        <div class="products__buttons">
+                                        <button class="products__btn-add" id="add" data-id=${product.id}>Add to cart</button>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="item__back-arr">
+                            <i class="far fa-arrow-alt-circle-up fa-2x"></i>
+                            </div>
+                            </div> 
+                        </div>
+                            `
+                    };
+                        
+                    
+                    
+                });  
+                viewContent.innerHTML = display;       
+                        
+            });
+            
+                 
+        });
+         
+        
+        
+        
+        
     }
     getBagButtons(){
         const btns = [...document.querySelectorAll('#add')];
@@ -162,6 +231,8 @@ class UI{
                     // Display cart item
                     this.addCartItem(cartItem);
                     // Show the cart
+                    
+                    
                 });
 
             }
@@ -197,15 +268,15 @@ class UI{
             </div>
             
 
-        `;
-
-        cartContent.appendChild(div);
-
+        `;       
+        cartContent.appendChild(div);        
     }
+    
     showCart() {
         cartBody.classList.add('c-cart__visible');
         cartOverlay.classList.add('c-cart__visible');
     }
+    
     hideCart(){
         cartBody.classList.remove('c-cart__visible');
         cartOverlay.classList.remove('c-cart__visible');
@@ -216,6 +287,7 @@ class UI{
         this.populateCart(cart);
         cartBtn.addEventListener('click',this.showCart);
         cartClose.addEventListener('click',this.hideCart);
+        
     }
     populateCart(cart){
         cart.forEach(item =>this.addCartItem(item));
@@ -248,11 +320,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     ui.setupAPP();
 
     products.getProduct().then(products => {
-    ui.displayProducts(products)
+    ui.displayProducts(products);
+    ui.showSingleProduct(products);
     Storage.saveProduct(products);
 }).then(()=>{
     ui.getBagButtons();
     });
+        
+    
 });
 
 
