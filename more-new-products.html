@@ -15,7 +15,9 @@
         <!-- Brand Name-->
 
             <a href="index.html" class="c-nav__brand-name">FVSHION</a>
-
+            <i class="fas fa-shopping-cart d-block d-lg-none c-nav__cart-desktop" id="cart">
+                <span class="c-nav__span-desktop" id="cart-count">0</span>
+            </i>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars mt-1 c-nav__bars"></i>
@@ -27,26 +29,20 @@
                     <a href="index.html" class="nav-link c-nav__list-item">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link c-nav__list-item">About</a>
+                    <a href="about.html" class="nav-link c-nav__list-item">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link c-nav__list-item">Shop</a>
+                    <a href="more-new-products.html" class="nav-link c-nav__list-item">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link c-nav__list-item">Support</a>
+                    <a href="contact.html" class="nav-link c-nav__list-item">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link c-nav__list-item">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link c-nav__list-item">FAQ</a>
+                    <a href="faq.html" class="nav-link c-nav__list-item">FAQ</a>
                 </li>
             </ul>
-            <i class="far fa-heart ml-lg-5 c-nav__cart-desktop">
-                <span class="c-nav__span-desktop" id="heart-count">0</span>
-            </i>
-            <i class="fas fa-shopping-cart c-nav__cart-desktop mx-3 mx-lg-0 mr-lg-5 mr-0" id="cart">
-                <span class="c-nav__span-desktop">0</span>
+            <i class="fas fa-shopping-cart c-nav__cart-desktop mx-5" id="cart">
+                <span class="c-nav__span-desktop" id="cart-count">0</span>
             </i>
             <button class="d-block c-nav__button">Login</button>
         </div>
@@ -54,69 +50,36 @@
     </nav>
     <!-- End of navbar-->
     <!-- Cart -->
-    <div class="container-fluid">
-
+    <div class="container">
         <div class="c-cart__overlay">
-
-
-                    <div class="c-cart">
-                        <!-- cart info -->
-                        <div class="c-cart__info">
-                            <h2>Your cart:</h2>
-                            <h3>Total: $<span id="c-cart__total"></span></h3>
-                            <button class="my-3">Clear cart</button>
-
-                        </div>
-
-                        <!-- end of cart info -->
-                    </div>
-
-
-
-                    <div class="c-cart__content">
-
-                        <span class="c-cart__close" id="cart-close">
-                                <i class="fas fa-times-circle fa-2x"></i>
-                        </span>
-                        <div class="c-cart__body">
-                            <img src="images/clothes/1.png" class="img-fluid">
-                            <div class="c-cart__price">
-                                <h5>sdfsdfsdfsdfsdfs</h5>
-                                <strong>$20</strong>
-
-                            </div>
-                        </div>
-
-
-
-
-
-        </div>
-    </div>
-    </div>
-    <!-- End of Cart -->
-    <!-- Favourite Cart -->
-    <div class="container-fluid">
-        <div class="c-cart__overlay">
-            <div class="c-cart__favourite">
-            <div class="c-cart__favourite-body">
-                <div class="cart-content">
-                    <div class="c-cart__favouritebody">
-                        <span class="c-cart__close" id="cart-close">
-                            <i class="fas fa-times-circle fa-2x"></i>
-                        </span>
-                    <!-- cart footer -->
-                    <div class="c-cart__footer">
-                        <h3 id="cart-total">Total: $0</h3>
-                        <button>Clear cart</button>
-                    </div>
-                    <!-- end of cart footer -->
-                </div>
+            <div class="c-cart">
+            <div class="c-cart__body">
+                <span class="c-cart__close" id="cart-close">
+                    <i class="fas fa-times-circle fa-2x"></i>
+                </span>
+                <h2 class="text-center py-5">Your cart</h2>
+                <!-- cart item -->
+                <div class="c-cart__item"></div>
+                <!-- end of cart item -->
+            
+            <!-- cart footer -->
+            <div class="c-cart__footer">
+                <h3>Total Cost: $<span id="c-cart__total"></span></h3>
+                <button class="c-cart__clear">Clear cart</button>
             </div>
+            <!-- end of cart footer -->
+        </div>
         </div>
         </div>
     </div>
-    <!-- End of Favourite Cart -->
+    <!-- End of cart-->
+    <!-- Single item -->
+    <div class="item__view">
+        <div class="item__overlay">
+        <div class="item__body"></div>
+        </div>
+        </div>
+        <!-- End of Single item -->
 
     <!-- Products -->
     <section class="py-5">
@@ -198,11 +161,10 @@
                 <div class="col-lg-2 py-lg-0 py-3">
                     <h4 class="pb-3">Quick links</h4>
                         <a href="index.html" class="d-block footer__links">Home</a>
-                        <a href="" class="d-block footer__links">About</a>
-                        <a href="" class="d-block footer__links">Shop</a>
-                        <a href="" class="d-block footer__links">Support</a>
-                        <a href="" class="d-block footer__links">Contact</a>
-                        <a href="" class="d-block footer__links">FAQ</a>
+                        <a href="about.html" class="d-block footer__links">About</a>
+                        <a href="more-new-products.html" class="d-block footer__links">Shop</a>
+                        <a href="contact.html" class="d-block footer__links">Contact</a>
+                        <a href="faq.html" class="d-block footer__links">FAQ</a>
                 </div>
                 <div class="col-lg-2 py-lg-0 py-3">
                     <h4 class="pb-3">Problems?</h4>
