@@ -59,11 +59,11 @@ more.addEventListener('click', ()=>{
 
 
 // Getting cart DOM from html
-let cartBtn = document.querySelector('#cart');
-let heartBtn = document.querySelector('#heart-cart');
+let cartBtn = [...document.querySelectorAll('#cart')];
 let cartClose = document.querySelector('#cart-close');
 let cartOverlay = document.querySelector('.c-cart__overlay');
 let cartBody = document.querySelector('.c-cart');
+
 
 
 
@@ -72,7 +72,7 @@ let cartBody = document.querySelector('.c-cart');
 
 let productDOM = document.querySelector('.products__center');
 let cartTotal = document.querySelector('#c-cart__total');
-let cartCount = document.querySelector('#cart-count');
+let cartCount = [...document.querySelectorAll('#cart-count')];
 let cartContent = document.querySelector('.c-cart__item');
 
 // Cart
@@ -106,12 +106,12 @@ class UI{
         products.forEach(product => {
             result += `
 
-            <div class="col-lg-4 col-md-6 col-sm-9 py-4 py-lg-2 filter all ${product.sex} ${product.type}">
+            <div class="col-lg-4 col-md-6 col-sm-9 py-1 py-lg-3 filter all ${product.sex} ${product.type}">
 
                         <div class="${product.show}">
                             <div class="products__box">
                                 <img src=${product.image} class="img-fluid">
-                                <button class="far fa-heart" id="heart"></button>
+                                
                             </div>
                             <div class="products__content">
                                 <h5>${product.title}</h5>
@@ -262,7 +262,9 @@ class UI{
             totalCount += item.amount;
         });
         cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
-        cartCount.innerText = totalCount;
+        cartCount.forEach(item =>{
+            item.innerText = totalCount;
+        })
 
 
     }
@@ -367,7 +369,10 @@ class UI{
         cart = Storage.getCart();
         this.setCartValues(cart);
         this.populateCart(cart);
-        cartBtn.addEventListener('click',this.showCart);
+        cartBtn.forEach(button => {
+            button.addEventListener('click', this.showCart);
+        });
+        
         cartClose.addEventListener('click',this.hideCart);
         
     }
@@ -412,6 +417,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         
     
 });
+
 
 
 
